@@ -5,8 +5,18 @@
 // [7,0,6,5] а на выходе должно быть, [9,0,7,5]
 
 function diff2(arr){
-    let newArr = [ca3t4frsc]
-    return newArr
+    let newArr = []
+    for (let i = 0; i < arr.length-1; i++) {
+        debugger
+        do{
+            if(arr[i] > arr[i+1]){
+                arr[i] = arr[i] + 1
+            }else{
+                arr[i + 1] = arr[i + 1] + 1
+            }
+        }while( Math.abs(arr[i] - arr[i+1]) === 2  )
+    }
+    return arr
 }
 
 console.log(diff2([8,7,4,3]))
