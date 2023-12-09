@@ -1,27 +1,20 @@
 function removeParentheses(s) {
+    let switchCounter = 0
     let modified = "";
-
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] === "(") {
-            let j = i + 1;
-            let count = 1;
-
-            while (count > 0 && j < s.length) {
-                if (s[j] === "(") {
-                    count++;
-                } else if (s[j] === ")") {
-                    count--;
-                }
-                j++;
-            }
-
-            modified += s.slice(i + 1, j - 1);
-            i = j - 1;
-        } else {
-            modified += s[i];
+    for (let char of s) {
+        if (char === "(") {
+            switchCounter ++
+            continue
+        }
+        if (char === ")") {
+            switchCounter --
+            continue
+        }
+        if (!switchCounter){
+            modified += char
         }
     }
-
     return modified;
 }
-console.log(removeParentheses("a(b(c))"))
+
+console.log(removeParentheses("Hello (a(b)c) world"))
