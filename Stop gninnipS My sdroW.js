@@ -9,4 +9,4 @@ function spinWords(string) {
     }
     return modified.trim()
 }
-console.log(spinWords("Hey fellow warriors"))
+console.log(spinWords("Welcome"))
