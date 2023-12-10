@@ -2,6 +2,7 @@ function removeParentheses(s) {
     let switchCounter = 0
     let modified = "";
     for (let char of s) {
+        debugger
         if (char === "(") {
             switchCounter ++
             continue
